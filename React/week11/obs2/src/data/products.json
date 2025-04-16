@@ -1,0 +1,22 @@
+[                                                                                                                                                                       
+  {                                                                                                                                                                     
+    "id": 1,                                                                                                                                                            
+    "name": "NutriPro Juicer Mixer Grinder",                                                                                                                            
+    "description": "Smoothie Maker - 500 Watts (2 Jar, Silver) - 2 Year Warranty",                                                                                      
+    "price": 1599,                                                                                                                                                      
+    "image": "https://via.placeholder.com/150"                                                                                                                          
+  },
+  {                                                                                                                                                                     
+    "id": 2,                                                                                                                                                            
+    "name": "Bajaj Force Ceiling Fan",                                                                                                                                  
+    "description": "High Air Delivery and Energy Efficient Fan",                                                                                                        
+    "price": 1299,                                                                                                                                                      
+    "image": "https://via.placeholder.com/150"},                                                                                                                         
+  {                                                                                                                                                                    
+    "id": 3,                                                                                                                                                            
+    "name": "iBELL Sandwich Maker",                                                                                                                                     
+    "description": "Non-Stick Sandwich Plates, Grill & Toast, 800 Watt",                                                                                                
+    "price": 999,                                                                                                                                                       
+    "image": "https://via.placeholder.com/150"                                                                                                                          
+  }                                                                                                                                                                     
+] 

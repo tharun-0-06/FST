@@ -1,0 +1,45 @@
+body {                                                                                                                                                   
+    font-family: Arial, sans-serif;                                                                                                                    
+    text-align: center;                                                                                                                                
+    background-color: #f4f4f4;                                                                                                                     
+    margin: 0;                                                                                                                                         
+    padding: 20px;                                                                                                                                     
+}                                                                                                                                                      
+                                                                                                                                                       
+.container {                                                                                                                                           
+    margin-top: 50px;                                                                                                                                  
+}                                                                                                                                                      
+                                                                                                                                                       
+h1 {                                                                                                                                              
+    font-size: 48px;                                                                                                                                   
+    margin-bottom: 20px;                                                                                                                               
+}                                                                                                                                                      
+                                                                                                                                                       
+.buttons button {                                                                                                                                      
+    font-size: 18px;                                                                                                                                   
+    padding: 10px 20px;                                                                                                                                
+    margin: 5px;                                                                                                                                       
+    border: none;                                                                                                                                      
+    cursor: pointer;                                                                                                                                   
+    border-radius: 0;
+
+}                                                                                                                                                      
+                                                                                                                                                       
+#start {                                                                                                                                               
+    background-color: brown;                                                                                                                         
+    color: white;                                                                                                                                      
+}                                                                                                                                                      
+                                                                                                                                                       
+#stop {                                                                                                                                                
+    background-color: blue;                                                                                                                         
+    color: white;                                                                                                                                      
+}                                                                                                                                                      
+                                                                                                                                                       
+#reset {                                                                                                                                               
+    background-color: black;                                                                                                                         
+    color: white;                                                                                                                                      
+}                                                                                                                                                      
+                                                                                                                                                       
+.buttons button hover {                                                                                                                                
+    opacity: 0.8;                                                                                                                                      
+}       

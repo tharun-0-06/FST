@@ -1,0 +1,64 @@
+<!DOCTYPE html>                                                                                                                                                         
+<html lang="en">                                                                                                                                                        
+<head>                                                                                                                                                                  
+  <meta charset="UTF-8">                                                                                                                                                
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                                
+  <title>Student Management</title>                                                                                                                                     
+  <link rel="stylesheet" href="styles.css">                                                                                                                            
+</head>                                                                                                                                                                 
+<body>                                                                                                                                                                  
+  <div class="container">                                                                                                                                               
+    <h1>Student Management System</h1>                                                                                                                                  
+
+    <!-- Form to Add a Student -->                                                                                                                                      
+    <h2>Add a New Student</h2>                                                                                                                                          
+    <form action="/add-student" method="POST">                                                                                                                          
+      <input type="text" name="registerNo" placeholder="Register No" required>                                                                                          
+      <input type="text" name="name" placeholder="Name" required>                                                                                                       
+      <input type="number" name="age" placeholder="Age" required>                                                                                                       
+      <input type="text" name="course" placeholder="Course" required>                                                                                                   
+      <button type="submit">Add Student</button>                                                                                                                        
+    </form>                                                                                                                                                             
+
+    <h2>Existing Students</h2>                                                                                                                                          
+    <table>                                                                                                                                                             
+      <thead>                                                                                                                                                           
+        <tr>                                                                                                                                                            
+          <th>Register No</th>                                                                                                                                          
+          <th>Name</th>                                                                                                                                                 
+          <th>Age</th>                                                                                                                                                  
+          <th>Course</th>                                                                                                                                               
+          <th>Actions</th>                                                                                                                                              
+        </tr>                                                                                                                                                           
+      </thead>                                                                                                                                                          
+      <tbody>                                                                                                                                                           
+        <!-- Dynamically populate student records -->                                                                                                                   
+        <% const students = require('../students.json'); students.forEach(student => { %>                                                                               
+          <tr>                                                                                                                                                          
+            <td><%= student.registerNo %></td>                                                                                                                          
+            <td><%= student.name %></td>                                                                                                                                
+            <td><%= student.age %></td>                                                                                                                                 
+            <td><%= student.course %></td>                                                                                                                              
+            <td>                                                                                                                                                        
+              <!-- Edit Form -->                                                                                                                                        
+              <form action="/edit-student" method="POST" style="display:inline;">                                                                                       
+                <input type="hidden" name="registerNo" value="<%= student.registerNo %>">                                                                               
+                <input type="text" name="name" value="<%= student.name %>" required>                                                                                    
+                <input type="number" name="age" value="<%= student.age %>" required>                                                                                    
+                <input type="text" name="course" value="<%= student.course %>" required>                                                                                
+                <button type="submit">Edit</button>                                                                                                                     
+              </form>                                                                                                                                                   
+
+              <!-- Delete Form -->                                                                                                                                      
+              <form action="/delete-student" method="POST" style="display:inline;">                                                                                     
+                <input type="hidden" name="registerNo" value="<%= student.registerNo %>">                                                                               
+                <button type="submit">Delete</button>                                                                                                                   
+              </form>                                                                                                                                                   
+            </td>                                                                                                                                                       
+          </tr>                                                                                                                                                         
+        <% }) %>                                                                                                                                                        
+      </tbody>                                                                                                                                                          
+    </table>                                                                                                                                                            
+  </div>                                                                                                                                                                
+</body>                                                                                                                                                                 
+</html>           

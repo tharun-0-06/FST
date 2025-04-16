@@ -1,0 +1,244 @@
+1. SELECT * FROM Employee;
+	    MPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 1 Tharun                         Manager                                                                                                      
+	     44000 Sales                                1001         40                                                                                        
+		                                                                                                                                               
+		 2 Mukil                          Asst.Manager                                                                                                 
+	     27500 Sales                                1001         30                                                                                        
+		                                                                                                                                               
+		 3 Vetri                          Supervisor                                                                                                   
+	     27000 Documentation                        1002         35                                                                                        
+		                                                                                                                                               
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 4 Joshua                         Operator                                                                                                     
+	     18000 System                               1003         45                                                                                        
+		                                                                                                                                               
+		 5 Gowtham                        Operator                                                                                                     
+	     14000 System                               1003         43 
+	     
+2. SELECT DISTINCT Designation FROM Employee;
+		DESIGNATION                                                                                                                                            
+	------------------------------                                                                                                                         
+	Manager                                                                                                                                                
+	Supervisor                                                                                                                                             
+	Asst.Manager                                                                                                                                           
+	Operator  
+3. SELECT * FROM Employee GROUP BY Empno,Ename,Designation,Salary,Department,Dept_id,Age,Phone HAVING COUNT(*)>1;
+	no rows selected 
+4. SELECT * FROM Employee ORDER BY Salary ASC;
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 5 Gowtham                        Operator                                                                                                     
+	     14000 System                               1003         43                                                                                        
+		                                                                                                                                               
+		 4 Joshua                         Operator                                                                                                     
+	     18000 System                               1003         45                                                                                        
+		                                                                                                                                               
+		 2 Mukil                          Asst.Manager                                                                                                 
+	     25000 Sales                                1001         30                                                                                        
+		                                                                                                                                               
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 3 Vetri                          Supervisor                                                                                                   
+	     27000 Documentation                        1002         35                                                                                        
+		                                                                                                                                               
+		 1 Tharun                         Manager                                                                                                      
+	     40000 Sales                                1001         40        
+5. (i) SELECT AVG(Salary) FROM Employee;
+	AVG(SALARY)                                                                                                                                            
+	-----------                                                                                                                                            
+        24800  
+   (ii) SELECT MIN(Salary) FROM Employee;
+   	MIN(SALARY)                                                                                                                                            
+	-----------                                                                                                                                            
+        14000 
+   (iii) SELECT MAX(Salary) FROM Employee;
+   	MAX(SALARY)                                                                                                                                            
+	-----------                                                                                                                                            
+        40000   
+6. UPDATE Employee SET Salary=Salary+((10/100)*Salary);
+	
+	2 rows updated.                                                                                                                                        
+                                                                                                                                                       
+	SQL> SELECT * FROM Employee;                                                                                                                           
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 1 Tharun                         Manager                                                                                                      
+	     44000 Sales                                1001         40                                                                                        
+		                                                                                                                                               
+		 2 Mukil                          Asst.Manager                                                                                                 
+	     27500 Sales                                1001         30                                                                                        
+		                                                                                                                                               
+		 3 Vetri                          Supervisor                                                                                                   
+	     27000 Documentation                        1002         35                                                                                        
+		                                                                                                                                               
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 4 Joshua                         Operator                                                                                                     
+	     18000 System                               1003         45                                                                                        
+		                                                                                                                                               
+		 5 Gowtham                        Operator                                                                                                     
+	     14000 System                               1003         43  
+7. SELECT Designation, AVG(Salary), COUNT(Designation) FROM Employee GROUP BY Designation; 
+	SELECT Designation, AVG(Salary), COUNT(Designation) FROM Employee GROUP BY Designation;                                                           
+		                                                                                                                                               
+	DESIGNATION                    AVG(SALARY) COUNT(DESIGNATION)                                                                                          
+	------------------------------ ----------- ------------------                                                                                          
+	Manager                              44000                  1                                                                                          
+	Supervisor                           27000                  1                                                                                          
+	Asst.Manager                         27500                  1                                                                                          
+	Operator                             16000                  2 
+8. (i) UPDATE Employee SET Salary=Salary+0.25*Salary;
+	5 rows updated.
+   (ii) SELECT * FROM Employee WHERE Salary>3000;
+		EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 1 Tharun                         Manager                                                                                                      
+	     55000 Sales                                1001         40                                                                                        
+		                                                                                                                                               
+		 2 Mukil                          Asst.Manager                                                                                                 
+	     34375 Sales                                1001         30                                                                                        
+		                                                                                                                                               
+		 3 Vetri                          Supervisor                                                                                                   
+	     33750 Documentation                        1002         35                                                                                        
+		                                                                                                                                               
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 4 Joshua                         Operator                                                                                                     
+	     22500 System                               1003         45                                                                                        
+		                                                                                                                                               
+		 5 Gowtham                        Operator                                                                                                     
+	     17500 System                               1003         43 
+9. SELECT Ename FROM Employee WHERE Ename LIKE '______';
+	ENAME                                                                                                                                                  
+	------------------------------                                                                                                                         
+	Joshua                                                                                                                                                 
+	Tharun  
+10. (i) SELECT * FROM Employee ORDER BY Empno ASC;
+		    EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 5 Gowtham                        Operator                                                                                                     
+	     17500 System                               1003         43                                                                                        
+		                                                                                                                                               
+		 4 Joshua                         Operator                                                                                                     
+	     22500 System                               1003         45                                                                                        
+		                                                                                                                                               
+		 3 Vetri                          Supervisor                                                                                                   
+	     33750 Documentation                        1002         35                                                                                        
+		                                                                                                                                               
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 2 Mukil                          Asst.Manager                                                                                                 
+	     34375 Sales                                1001         30                                                                                        
+		                                                                                                                                               
+		 1 Tharun                         Manager                                                                                                      
+	     55000 Sales                                1001         40  
+    (ii) SELECT * FROM Employee ORDER BY Designation DESC;
+		EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 3 Vetri                          Supervisor                                                                                                   
+	     33750 Documentation                        1002         35                                                                                        
+		                                                                                                                                               
+		 5 Gowtham                        Operator                                                                                                     
+	     17500 System                               1003         43                                                                                        
+		                                                                                                                                               
+		 4 Joshua                         Operator                                                                                                     
+	     22500 System                               1003         45                                                                                        
+		                                                                                                                                               
+		                                                                                                                                               
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+	---------- ------------------------------ ------------------------------                                                                               
+	    SALARY DEPARTMENT                        DEPT_ID        AGE                                                                                        
+	---------- ------------------------------ ---------- ----------                                                                                        
+		 1 Tharun                         Manager                                                                                                      
+	     55000 Sales                                1001         40                                                                                        
+		                                                                                                                                               
+		 2 Mukil                          Asst.Manager                                                                                                 
+	     34375 Sales                                1001         30                  
+11. SELECT * FROM Employee WHERE (SELECT AVG(Salary) FROM Employee)<Salary;
+	     EMPNO ENAME                          DESIGNATION                                                                                                  
+---------- ------------------------------ ------------------------------                                                                               
+    SALARY DEPARTMENT                        DEPT_ID        AGE      PHONE                                                                             
+---------- ------------------------------ ---------- ---------- ----------                                                                             
+         1 Tharun                         Manager                                                                                                      
+     55000 Sales                                   1         40                                                                                        
+                                                                                                                                                       
+         2 Mukil                          Asst.Manager                                                                                                 
+     34375 Sales                                   2         30                                                                                        
+                                                                                                                                                       
+         3 Vetri                          Supervisor                                                                                                   
+     33750 Documentation                           3         35 
+
+12. SELECT MAX(Salary) FROM Employee WHERE Salary<(SELECT MAX(Salary) FROM Employee);
+	MAX(SALARY)                                                                                                                                            
+	-----------                                                                                                                                            
+        34375  
+13. SELECT Age, MAX(Salary) FROM Employee GROUP BY Age ORDER BY MAX(Salary) ASC; 
+	       AGE MAX(SALARY)                                                                                                                                 
+	---------- -----------                                                                                                                                 
+		43       17500                                                                                                                                 
+		45       22500                                                                                                                                 
+		35       33750                                                                                                                                 
+		30       34375                                                                                                                                 
+		40       55000 
+14. INSERT INTO Employee VALUES('6','Jagan','Daily Wager','1100','System','1010','55','123');
+	ERROR at line 1:                                                                                                                                       
+	ORA-02291: integrity constraint (S2023103040.FK1) violated - parent key not                                                                            
+	found.
+   
+    ALTER TABLE Employee DROP CONSTRAINT FK7;                                                                                                         
+        Table altered.
+        
+    INSERT INTO Employee VALUES('6','Jagan','Daily Wager','1100','System','1010','55','123');                                                              
+        
+15. (i) ALTER TABLE Employee ADD Phone INT;
+	Table altered.
+	
+    (ii) ALTER TABLE Employee ADD CONSTRAINT FK5 FOREIGN KEY(Empno) REFERENCES Worker(Empno);
+    	Table altered. 
+    
+    SPOT:
+    	
+    	1. select name,add_months(dob,60*12)AS retyear from empl;                                                                                            
+                                                                                                                                                       
+	NAME                           RETYEAR                                                                                                                 
+	------------------------------ ---------                                                                                                               
+	tharun                         12-DEC-28                                                                                                               
+	jagan                      11-DEC-27      
+	
+	2. SELECT * FROM empl WHERE name LIKE '%a';                                                                                                          
+                                                                                                                                                       
+	NAME                                   ID DOB          RETYEAR                                                                                         
+	------------------------------ ---------- --------- ----------                                                                                         
+	jagan                                2 11-DEC-67       				2027                                                                                                          
+                                        

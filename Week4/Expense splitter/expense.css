@@ -1,0 +1,45 @@
+body {                                                                                                                                                 
+    font-family: Arial, sans-serif;                                                                                                                    
+    display: flex;                                                                                                                                     
+    justify-content: center;                                                                                                                           
+    align-items: center;                                                                                                                               
+    height: 100vh;                                                                                                                                     
+    background-color: pink;                                                                                                                            
+}                                                                                                                                                      
+.form-container {                                                                                                                                      
+   background: lightcoral;                                                                                                                            
+   padding: 75px;                                                                                                                                     
+    border-radius: 20px;                                                                                                                               
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);                                                                                                           
+    width: 300px;                                                                                                                                      
+    text-align: center;                                                                                                                                
+}                                                                                                                                                      
+input, select, button {                                                                                                                                
+  width: 100%;                                                                                                                                       
+    margin: 10px 0;                                                                                                                                    
+    padding: 8px;                                                                                                                                      
+}                                                                                                                                                      
+
+button {                                                                                                                                               
+
+
+    background: palevioletred;                                                                                                                         
+
+
+    color: white;                                                                                                                                      
+
+
+    border: none;                                                                                                                                      
+
+
+    cursor: pointer;                                                                                                                                   
+
+
+}                                                                                                                                                      
+
+
+
+button:hover {                                                                                                                                         
+    background: lightgray;                                                                                                                             
+
+}        

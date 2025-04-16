@@ -1,0 +1,69 @@
+<!DOCTYPE html>                                                                                                                                                         
+<html lang="en">                                                                                                                                                        
+<head>                                                                                                                                                                  
+    <meta charset="UTF-8">                                                                                                                                              
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                              
+    <title>CSE Lab1 Timetable</title>                                                                                                                                   
+    <style>                                                                                                                                                             
+        body {                                                                                                                                                          
+            font-family: Arial, sans-serif;                                                                                                                             
+            background-color: #f0f0f0;                                                                                                                                  
+            padding: 20px;                                                                                                                                              
+        }                                                                                                                                                               
+        h1 {                                                                                                                                                            
+            text-align: center;                                                                                                                                         
+            color: #333;                                                                                                                                                
+        }                                                                                                                                                               
+        table {                                                                                                                                                         
+            width: 100%;                                                                                                                                                
+            border-collapse: collapse;                                                                                                                                  
+            margin-top: 20px;                                                                                                                                           
+        }                                                                                                                                                               
+        table, th, td {                                                                                                                                                 
+            border: 1px solid #ccc;                                                                                                                                     
+        }                                                                                                                                                               
+        th, td {                                                                                                                                                        
+            padding: 8px 12px;                                                                                                                                          
+            text-align: center;                                                                                                                                         
+        }                                                                                                                                                               
+        th {                                                                                                                                                            
+            background-color: #4CAF50;                                                                                                                                  
+            color: white;                                                                                                                                               
+        }                                                                                                                                                               
+    </style>                                                                                                                                                            
+</head>                                                                                                                                                                 
+<body>                                                                                                                                                                  
+    <h1>CSE Lab 1 Timetable</h1>                                                                                                                                        
+    <table>                                                                                                                                                             
+        <thead>                                                                                                                                                         
+            <tr>                                                                                                                                                        
+                <th>Day</th>                                                                                                                                            
+                <th>Session</th>                                                                                                                                        
+                <th>Subject/Status</th>                                                                                                                                 
+            </tr>                                                                                                                                                       
+        </thead>                                                                                                                                                        
+        <tbody id="lab1-timetable">                                                                                                                                     
+            <!-- Timetable data will be inserted here -->                                                                                                               
+        </tbody>                                                                                                                                                        
+    </table>                                                                                                                                                            
+
+    <script>                                                                                                                                                            
+        // Fetch timetable data from the server and display it                                                                                                          
+        fetch('http://localhost:8086/lab1')                                                                                                                             
+            .then(response => response.text())                                                                                                                          
+            .then(data => {                                                                                                                                             
+                const timetableElement = document.getElementById('lab1-timetable');                                                                                     
+                const entries = data.split(' , ');                                                                                                                      
+                                                                                                                                                                        
+                                                                                                                                                                        
+                entries.forEach(entry => {                                                                                                                              
+                    const [day, session, status] = entry.split(', ');                                                                                                   
+                    const row = document.createElement('tr');                                                                                                           
+                    row.innerHTML = `<td>${day}</td><td>${session}</td><td>${status}</td>`;                                                                             
+                    timetableElement.appendChild(row);                                                                                                                  
+                });                                                                                                                                                     
+            })                                                                                                                                                          
+            .catch(error => console.error('Error fetching timetable data:', error));                                                                                    
+    </script>                                                                                                                                                           
+</body>                                                                                                                                                                 
+</html>   
